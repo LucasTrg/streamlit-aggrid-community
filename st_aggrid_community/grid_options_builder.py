@@ -149,47 +149,6 @@ class GridOptionsBuilder:
 
         self.__grid_options["columnDefs"][field].update(colDef)
 
-    def configure_side_bar(self, filters_panel=True, columns_panel=True, defaultToolPanel=""):
-        """configures the side panel of ag-grid.
-           Side panels are enterprise features, please check www.ag-grid.com
-
-        Args:
-            filters_panel (bool, optional):
-                Enable filters side panel. Defaults to True.
-
-            columns_panel (bool, optional):
-                Enable columns side panel. Defaults to True.
-
-            defaultToolPanel (str, optional): The default tool panel that should open when grid renders.
-                                              Either "filters" or "columns".
-                                              If value is blank, panel will start closed (default)
-        """
-        filter_panel = {
-            "id": "filters",
-            "labelDefault": "Filters",
-            "labelKey": "filters",
-            "iconKey": "filter",
-            "toolPanel": "agFiltersToolPanel",
-        }
-
-        columns_panel = {
-            "id": "columns",
-            "labelDefault": "Columns",
-            "labelKey": "columns",
-            "iconKey": "columns",
-            "toolPanel": "agColumnsToolPanel",
-        }
-
-        if filters_panel or columns_panel:
-            sideBar = {"toolPanels": [], "defaultToolPanel": defaultToolPanel}
-
-            if filters_panel:
-                sideBar["toolPanels"].append(filter_panel)
-            if columns_panel:
-                sideBar["toolPanels"].append(columns_panel)
-
-            self.__grid_options["sideBar"] = sideBar
-
     def configure_selection(
         self,
         selection_mode="single",

@@ -179,10 +179,10 @@ package-lock.json
 ########################################################################
 .vscode/
 
-st_aggrid/frontend/node_modules/
-st_aggrid/frontend/.eslintcache
-streamlit_aggrid.egg-info/*
-streamlit_aggrid.egg-info/PKG-INFO
+st_aggrid_communirty/frontend/node_modules/
+st_aggrid_community/frontend/.eslintcache
+streamlit_aggrid_community.egg-info/*
+streamlit_aggrid_community.egg-info/PKG-INFO
 Pipfile.lock
 Pipfile
 #/poetry.lock

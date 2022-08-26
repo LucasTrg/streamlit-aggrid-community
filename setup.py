@@ -4,14 +4,14 @@ with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="streamlit-aggrid",
+    name="streamlit-aggrid-community",
     version="0.2.1",
     author="Pablo Fonseca",
     author_email="pablo.fonseca+pip@gmail.com",
     description="Streamlit component implementation of ag-grid",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/PablocFonseca/streamlit-aggrid",
+    url="https://github.com/LucasTrg/streamlit-aggrid-community",
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",

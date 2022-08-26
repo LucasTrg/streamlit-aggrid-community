@@ -10,23 +10,6 @@ import { AgGridReact } from "@ag-grid-community/react"
 import { ModuleRegistry, ColumnApi, GridApi, DetailGridInfo } from "@ag-grid-community/core"
 import { CsvExportModule } from "@ag-grid-community/csv-export"
 import { ClientSideRowModelModule } from "@ag-grid-community/client-side-row-model"
-import { LicenseManager } from "@ag-grid-enterprise/core"
-
-import { GridChartsModule } from "@ag-grid-enterprise/charts"
-import { SparklinesModule } from "@ag-grid-enterprise/sparklines"
-import { ClipboardModule } from "@ag-grid-enterprise/clipboard"
-import { ColumnsToolPanelModule } from "@ag-grid-enterprise/column-tool-panel"
-import { ExcelExportModule } from "@ag-grid-enterprise/excel-export"
-import { FiltersToolPanelModule } from "@ag-grid-enterprise/filter-tool-panel"
-import { MasterDetailModule } from "@ag-grid-enterprise/master-detail"
-import { MenuModule } from "@ag-grid-enterprise/menu"
-import { RangeSelectionModule } from "@ag-grid-enterprise/range-selection"
-import { RichSelectModule } from "@ag-grid-enterprise/rich-select"
-import { RowGroupingModule } from "@ag-grid-enterprise/row-grouping"
-import { SetFilterModule } from "@ag-grid-enterprise/set-filter"
-import { MultiFilterModule } from "@ag-grid-enterprise/multi-filter"
-import { SideBarModule } from "@ag-grid-enterprise/side-bar"
-import { StatusBarModule } from "@ag-grid-enterprise/status-bar"
 
 import { parseISO, compareAsc } from "date-fns"
 import { format } from "date-fns-tz"
@@ -92,28 +75,6 @@ class AgGrid extends StreamlitComponentBase<State> {
       addCustomCSS(props.args.custom_css)
     }
 
-    if (props.args.enable_enterprise_modules) {
-      ModuleRegistry.registerModules([
-        ExcelExportModule,
-        GridChartsModule,
-        SparklinesModule,
-        ColumnsToolPanelModule,
-        FiltersToolPanelModule,
-        MasterDetailModule,
-        MenuModule,
-        RangeSelectionModule,
-        RichSelectModule,
-        RowGroupingModule,
-        SetFilterModule,
-        MultiFilterModule,
-        SideBarModule,
-        StatusBarModule,
-        ClipboardModule,
-      ])
-      if ("license_key" in props.args) {
-        LicenseManager.setLicenseKey(props.args["license_key"])
-      }
-    }
 
     this.frameDtypes = this.props.args.frame_dtypes
     this.manualUpdateRequested = this.props.args.update_mode === 1

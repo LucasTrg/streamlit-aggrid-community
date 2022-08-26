@@ -1,1 +1,1 @@
-recursive-include st_aggrid/frontend/build *
+recursive-include st_aggrid_community/frontend/build *
